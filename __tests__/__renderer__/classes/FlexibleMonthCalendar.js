@@ -93,7 +93,7 @@ describe('FlexibleMonthCalendar class Tests', () =>
         expect(calendar._internalWaiverStore['2019-12-31']).toStrictEqual({ reason: 'New Year\'s eve', hours: '08:00' });
         expect(calendar._getWaiverStore(2019, 11, 31)).toStrictEqual({ reason: 'New Year\'s eve', hours: '08:00' });
         expect(calendar._internalWaiverStore['2010-12-31']).toStrictEqual(undefined);
-        expect(calendar._getWaiverStore(2019, 11, 31)).toStrictEqual(undefined);
+        expect(calendar._getWaiverStore(2010, 11, 31)).toStrictEqual(undefined);
 
         expect(waivedWorkdays.size).toStrictEqual(3);
         expect(Object.keys(calendar._internalWaiverStore).length).toStrictEqual(3);

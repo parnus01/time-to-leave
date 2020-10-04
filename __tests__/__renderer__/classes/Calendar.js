@@ -59,21 +59,21 @@ describe('Calendar class Tests', () =>
         expect(calendar._internalStore['2020-3-1-day-begin']).toBe('08:00');
         expect(calendar._getStore(2020, 3, 1, 'day-begin')).toBe('08:00');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe(undefined);
-        expect(calendar._getStore(1, 3, 2010, 'day-begin')).toBe(undefined);
+        expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe(undefined);
 
         expect(Object.keys(calendar._internalStore).length).toStrictEqual(9);
         expect(store.size).toStrictEqual(9);
 
-        calendar._setStore(1, 3, 2010, 'day-begin', '05:00');
+        calendar._setStore(2010, 3, 1, 'day-begin', '05:00');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe('05:00');
-        expect(calendar._getStore(1, 3, 2010, 'day-begin')).toBe('05:00');
+        expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe('05:00');
 
         expect(Object.keys(calendar._internalStore).length).toStrictEqual(10);
         expect(store.size).toStrictEqual(10);
 
-        calendar._removeStore(1, 3, 2010, 'day-begin');
+        calendar._removeStore(2010, 3, 1, 'day-begin');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe(undefined);
-        expect(calendar._getStore(1, 3, 2010, 'day-begin')).toBe(undefined);
+        expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe(undefined);
 
         // remove just sets the value as undefined in internal store, if it existed
         expect(Object.keys(calendar._internalStore).length).toStrictEqual(10);
