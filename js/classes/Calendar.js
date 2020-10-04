@@ -994,29 +994,39 @@ class Calendar {
      * @param {string} dayEnd
      * @return {Boolean}
      */
-    _hasInputError (dayBegin, lunchBegin, lunchEnd, dayEnd) {
-        var dayValues = new Array()
-        if (validateTime(dayBegin)) {
-            dayValues.push(dayBegin)
+    _hasInputError(dayBegin, lunchBegin, lunchEnd, dayEnd)
+    {
+        let dayValues = new Array();
+        let hasLunchStarted = false;
+        if (validateTime(dayBegin))
+        {
+            dayValues.push(dayBegin);
         }
-        if (validateTime(lunchBegin)) {
-            dayValues.push(lunchBegin)
+        if (validateTime(lunchBegin))
+        {
+            hasLunchStarted = true;
+            dayValues.push(lunchBegin);
         }
-        if (validateTime(lunchEnd)) {
-            dayValues.push(lunchEnd)
+        if (validateTime(lunchEnd))
+        {
+            if (!hasLunchStarted) return true;
+            hasLunchStarted = false;
+            dayValues.push(lunchEnd);
         }
-        if (validateTime(dayEnd)) {
-            dayValues.push(dayEnd)
+        if (validateTime(dayEnd))
+        {
+            if (hasLunchStarted) return true;
+            dayValues.push(dayEnd);
         }
-        for (var index = 0; index < dayValues.length; index++) {
-            if (index > 0 && (dayValues[index - 1] >= dayValues[index])) {
-                return true
+        for (let index = 0; index < dayValues.length; index++)
+        {
+            if (index > 0 && (dayValues[index-1] >= dayValues[index]))
+            {
+                return true;
             }
         }
-        return false
-    }
-
-    /**
+        return false;
+    }    /**
      * Toggles the state of the punch butttons and actions on or off
      * @param {Boolean} enable
      */
