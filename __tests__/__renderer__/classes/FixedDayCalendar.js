@@ -51,8 +51,8 @@ describe('FixedDayCalendar class Tests', () =>
 
     test('FixedDayCalendar internal storage correct loading', () =>
     {
-        expect(calendar._internalStore['2010-3-1-day-begin']).toBe('08:00');
-        expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe('08:00');
+        expect(calendar._internalStore['2020-3-1-day-begin']).toBe('08:00');
+        expect(calendar._getStore(2020, 3, 1, 'day-begin')).toBe('08:00');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe(undefined);
         expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe(undefined);
 
@@ -68,7 +68,7 @@ describe('FixedDayCalendar class Tests', () =>
 
         calendar._removeStore(2010, 3, 1, 'day-begin');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe(undefined);
-        expect(calendar._getStore(2020, 3, 1, 'day-begin')).toBe(undefined);
+        expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe(undefined);
 
         // remove just sets the value as undefined in internal store, if it existed
         expect(Object.keys(calendar._internalStore).length).toStrictEqual(10);
