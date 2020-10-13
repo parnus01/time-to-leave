@@ -51,7 +51,7 @@ describe('FixedDayCalendar class Tests', () =>
 
     test('FixedDayCalendar internal storage correct loading', () =>
     {
-        expect(calendar._internalStore['2020-3-1-day-begin']).toBe('08:00');
+        expect(calendar._internalStore['2010-3-1-day-begin']).toBe('08:00');
         expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe('08:00');
         expect(calendar._internalStore['2010-3-1-day-begin']).toBe(undefined);
         expect(calendar._getStore(2010, 3, 1, 'day-begin')).toBe(undefined);
