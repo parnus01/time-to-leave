@@ -156,9 +156,9 @@ class Calendar
 
     /**
      * Gets value from internal store.
-     * @param {number} day
-     * @param {number} month
      * @param {number} year
+     * @param {number} month
+     * @param {number} day
      * @param {string} key
      * @return {string|undefined} A time string
      */
@@ -170,9 +170,9 @@ class Calendar
 
     /**
      * Saves value on store and updates internal store.
-     * @param {number} day
-     * @param {number} month
      * @param {number} year
+     * @param {number} month
+     * @param {number} day
      * @param {string} key
      * @param {string} newValue valid time value
      */
@@ -186,9 +186,9 @@ class Calendar
 
     /**
      * Removes value from store and from internal store.
-     * @param {number} day
-     * @param {number} month
      * @param {number} year
+     * @param {number} month
+     * @param {number} day
      * @param {string} key
      */
     _removeStore(year, month, day, key)
@@ -201,9 +201,9 @@ class Calendar
 
     /**
      * Gets value from internal waiver store.
-     * @param {number} day
-     * @param {number} month
      * @param {number} year
+     * @param {number} month
+     * @param {number} day
      * @return {string} A time string
      */
     _getWaiverStore(year, month, day)
@@ -610,9 +610,9 @@ class Calendar
 
     /**
      * Gets the total for a specific day by looking into both stores.
-     * @param {number} day
-     * @param {number} month
      * @param {number} year
+     * @param {number} month
+     * @param {number} day
      * @return {string|undefined}
      */
     _getDayTotal(year, month, day)
